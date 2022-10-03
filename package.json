@@ -1,6 +1,7 @@
 {
-  "name": "@text/image-video",
-  "version": "1.0.0",
+  "name": "text-to-image-video",
+  "version": "1.0.1",
+  "description": "可以将文字、图片、视频进行「文本化」",
   "author": {
     "name": "llq0802",
     "email": "958614130@qq.com"
@@ -26,15 +27,14 @@
     "LICENSE",
     "README.md"
   ],
-  "type": "module",
-  "main": "dist/text-image.es.js",
-  "module": "dist/text-image.es.js",
-  "unpkg": "dist/text-image.umd.js",
-  "typings": "src/index.d.ts",
+  "main": "dist/text-to-image-video.es.js",
+  "module": "dist/text-to-image-video.es.js",
+  "unpkg": "dist/text-to-image-video.umd.js",
+  "typings": "dist/index.d.ts",
   "exports": {
     ".": {
-      "import": "./dist/text-image.es.js",
-      "require": "./dist/text-image.cjs.js"
+      "import": "./dist/text-to-image-video.es.js",
+      "require": "./dist/text-to-image-video.cjs.js"
     }
   },
   "scripts": {
@@ -42,6 +42,7 @@
     "build": "vite build",
     "preview": "vite preview"
   },
+  "dependencies": {},
   "devDependencies": {
     "typescript": "^4.6.4",
     "vite": "^3.1.0"

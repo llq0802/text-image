@@ -5,7 +5,7 @@ export default defineConfig({
     lib: {
       entry: './src/index.ts',
       name: 'createTextImage',
-      fileName: (format) => `@text-image-video.${format}.js`,
+      fileName: (format) => `text-to-image-video.${format}.js`,
       formats: ['umd', 'iife', 'es', 'cjs'],
     },
   },

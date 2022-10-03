@@ -1,14 +1,26 @@
-# @text/image-video 库使用说明
+<h1 align="center">Welcome to text-to-image-video 👋</h1>
+<div align="center"> 
+  <img src="https://img.shields.io/badge/License-MIT-yellow.svg" />
+  <img src="https://img.shields.io/badge/npm-0.12-orange.svg" />
+  <img src="https://img.shields.io/github/issues/crazylxr/3dtagcloudforeact.svg" />
+  <img src="https://img.shields.io/github/forks/crazylxr/3dtagcloudforeact.svg" />
+  <img src="https://img.shields.io/github/stars/crazylxr/3dtagcloudforeact.svg" />
+  <img src="https://img.shields.io/github/license/crazylxr/3dtagcloudforeact.svg" />
+</div>
+
+# text-to-image-video 库使用说明
+
+---
 
 ![image-20220928145647380](http://mdrs.yuanjin.tech/img/202209281456408.png)
 
-`@text-image-video`可以将文字、图片、视频进行「文本化」
+`text-to-image-video`可以将文字、图片、视频进行「文本化」
 
 只需要通过简单的配置即可使用
 
 ## 开始
 
-1.  `@text-image-video.umd.js`：适用于基于 UMD 的方式导入
+1.  `text-to-image-video.umd.js`：适用于基于 UMD 的方式导入
 
 ```html
 <!DOCTYPE html>
@@ -19,7 +31,7 @@
   </head>
   <body>
     <canvas id="demo"></canvas>
-    <script src="../dist/@text-image-video.umd.js"></script>
+    <script src="../dist/text-to-image-video.umd.js"></script>
     <script>
       createTextImage({
         canvas: document.getElementById('demo'),
@@ -33,21 +45,21 @@
 </html>
 ```
 
-2. `@text-image-video.es.js`：适用于基于 ESM 的方式导入
+2. `text-to-image-video.es.js`：适用于基于 ESM 的方式导入
 
 ```
-yarn add @text-image-video
+yarn add text-to-image-video
 
  or
 
-npm i @text-image-video
+npm i text-to-image-video
 
 ```
 
 ```tsx
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
-import  createTextImage,{ TextImageOption } from '@text-image-video';
+import  createTextImage,{ TextImageOption } from 'text-to-image-video';
 
 React.useEffect(() => {
   createTextImage({
