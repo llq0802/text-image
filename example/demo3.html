@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+  </head>
+  <body>
+    <canvas id="demo"></canvas>
+
+    <script src="../dist/text-image.umd.js"></script>
+
+    <script>
+      textImage.createTextImage({
+        canvas: document.getElementById('demo'),
+        raduis: 12,
+        isGray: true,
+        replaceText: '美女',
+        source: {
+          video: '../assets/1.mp4',
+        },
+      });
+    </script>
+  </body>
+</html>
