@@ -1,14 +1,14 @@
-# text-image 库使用说明
+# @text/image-video 库使用说明
 
 ![image-20220928145647380](http://mdrs.yuanjin.tech/img/202209281456408.png)
 
-`text-image`可以将文字、图片、视频进行「文本化」
+`@text-image-video`可以将文字、图片、视频进行「文本化」
 
 只需要通过简单的配置即可使用
 
 ## 开始
 
-1.  `text-image.umd.js`：适用于基于 UMD 的方式导入
+1.  `@text-image-video.umd.js`：适用于基于 UMD 的方式导入
 
 ```html
 <!DOCTYPE html>
@@ -19,9 +19,9 @@
   </head>
   <body>
     <canvas id="demo"></canvas>
-    <script src="./text-image/dist/text-image.iife.js"></script>
+    <script src="../dist/@text-image-video.umd.js"></script>
     <script>
-      textImage.createTextImage({
+      createTextImage({
         canvas: document.getElementById('demo'),
         source: {
           text: 'Text Image', // 绘制的文本是：Text Image
@@ -33,24 +33,24 @@
 </html>
 ```
 
-2. `text-image.es.js`：适用于基于 ESM 的方式导入
+2. `@text-image-video.es.js`：适用于基于 ESM 的方式导入
 
 ```
-yarn add text-image
+yarn add @text-image-video
 
  or
 
-npm i text-image
+npm i @text-image-video
 
 ```
 
 ```tsx
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
-import { createTextImage, TextImageOption } from 'text-image';
+import  createTextImage,{ TextImageOption } from '@text-image-video';
 
 React.useEffect(() => {
-  textImage.createTextImage({
+  createTextImage({
     canvas: document.getElementById('demo'),
     source: {
       text: 'Text Image', // 绘制的文本是：Text Image

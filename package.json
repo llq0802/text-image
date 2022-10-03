@@ -1,5 +1,5 @@
 {
-  "name": "text-image",
+  "name": "@text/image-video",
   "version": "1.0.0",
   "author": {
     "name": "llq0802",
@@ -13,6 +13,8 @@
   },
   "keywords": [
     "text-image",
+    "text-to-image",
+    "text-to-video",
     "text-video",
     "image-video",
     "文字视频",
@@ -37,7 +39,7 @@
   },
   "scripts": {
     "dev": "vite",
-    "build": "tsc && vite build",
+    "build": "vite build",
     "preview": "vite preview"
   },
   "devDependencies": {

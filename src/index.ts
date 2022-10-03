@@ -43,7 +43,7 @@ function createVideo(src: string): Promise<HTMLVideoElement> {
   });
 }
 
-export async function createTextImage(options: TextImageOption) {
+export default async function createTextImage(options: TextImageOption) {
   normalizeOptions(options);
   let painter: Painter;
   let painterOption = { ...options };
