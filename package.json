@@ -6,18 +6,18 @@
     "email": "958614130@qq.com"
   },
   "license": "MIT",
-  "homepage": "https://github.com/llq0802/rc-seamless-scroll",
+  "homepage": "https://github.com/llq0802/text-image",
   "repository": {
     "type": "git",
-    "url": "https://github.com/llq0802/rc-seamless-scroll"
+    "url": "https://github.com/llq0802/text-image"
   },
   "keywords": [
-    "react-seamless-scroll",
-    "rc-seamless-scroll",
-    "step-scroll",
-    "seamless",
-    "scroll",
-    "step"
+    "text-image",
+    "text-video",
+    "image-video",
+    "文字视频",
+    "文字图片",
+    "动态文字"
   ],
   "files": [
     "dist",
