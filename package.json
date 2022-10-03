@@ -1,0 +1,47 @@
+{
+  "name": "text-image",
+  "version": "1.0.0",
+  "author": {
+    "name": "llq0802",
+    "email": "958614130@qq.com"
+  },
+  "license": "MIT",
+  "homepage": "https://github.com/llq0802/rc-seamless-scroll",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/llq0802/rc-seamless-scroll"
+  },
+  "keywords": [
+    "react-seamless-scroll",
+    "rc-seamless-scroll",
+    "step-scroll",
+    "seamless",
+    "scroll",
+    "step"
+  ],
+  "files": [
+    "dist",
+    "LICENSE",
+    "README.md"
+  ],
+  "type": "module",
+  "main": "dist/text-image.es.js",
+  "module": "dist/text-image.es.js",
+  "unpkg": "dist/text-image.umd.js",
+  "typings": "src/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/text-image.es.js",
+      "require": "./dist/text-image.cjs.js"
+    }
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "typescript": "^4.6.4",
+    "vite": "^3.1.0"
+  }
+}
