@@ -1,6 +1,6 @@
 {
   "name": "text-to-image-video",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "可以将文字、图片、视频进行「文本化」",
   "author": {
     "name": "llq0802",
