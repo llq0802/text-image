@@ -45,7 +45,7 @@
 </html>
 ```
 
-2. `text-to-image-video.es.js`：适用于基于 ESM 的方式导入
+2. `text-to-image-video.es.js`：适用于基于 ESM 的方式导入 **(Vue 也同时支持)**
 
 ```
 yarn add text-to-image-video
