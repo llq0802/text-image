@@ -1,20 +1,20 @@
 var x = Object.defineProperty;
-var l = (t, i, s) => i in t ? x(t, i, { enumerable: !0, configurable: !0, writable: !0, value: s }) : t[i] = s;
-var h = (t, i, s) => (l(t, typeof i != "symbol" ? i + "" : i, s), s);
+var l = (t, e, s) => e in t ? x(t, e, { enumerable: !0, configurable: !0, writable: !0, value: s }) : t[e] = s;
+var h = (t, e, s) => (l(t, typeof e != "symbol" ? e + "" : e, s), s);
 class g {
-  constructor(i, s, e) {
+  constructor(e, s, i) {
     h(this, "width");
     h(this, "height");
     h(this, "pixels");
-    this.width = i, this.height = s, this.pixels = e;
+    this.width = e, this.height = s, this.pixels = i;
   }
-  getPixelAt(i, s) {
-    const e = s * this.width * 4 + i * 4;
+  getPixelAt(e, s) {
+    const i = s * this.width * 4 + e * 4;
     return [
-      this.pixels[e],
-      this.pixels[e + 1],
-      this.pixels[e + 2],
-      +(this.pixels[e + 3] / 255).toFixed(2)
+      this.pixels[i],
+      this.pixels[i + 1],
+      this.pixels[i + 2],
+      +(this.pixels[i + 3] / 255).toFixed(2)
     ];
   }
 }
@@ -30,8 +30,8 @@ class d {
   }
   getBitmap() {
     this.init(), this.draw();
-    const { width: i, height: s } = this.canvas, e = this.ctx.getImageData(0, 0, i, s).data;
-    return new g(i, s, e);
+    const { width: e, height: s } = this.canvas, i = this.ctx.getImageData(0, 0, e, s).data;
+    return new g(e, s, i);
   }
 }
 class w extends d {
@@ -46,17 +46,7 @@ class w extends d {
     this.canvas.width = this.width, this.canvas.height = this.height;
   }
   draw() {
-    this.ctx.drawImage(
-      this.img,
-      0,
-      0,
-      this.img.width,
-      this.img.height,
-      0,
-      0,
-      this.width,
-      this.height
-    );
+    this.ctx.drawImage(this.img, 0, 0, this.img.width, this.img.height, 0, 0, this.width, this.height);
   }
 }
 class f extends d {
@@ -69,11 +59,7 @@ class f extends d {
     this.canvas.width = this.option.text.length * this.option.fontSize, this.canvas.height = this.option.fontSize, this.ctx.font = `bold ${this.option.fontSize}px ${this.option.fontFamily}`, this.ctx.fillStyle = "#000", this.ctx.textAlign = "center", this.ctx.textBaseline = "middle";
   }
   draw() {
-    this.ctx.fillText(
-      this.option.text,
-      this.canvas.width / 2,
-      this.canvas.height / 2
-    );
+    this.ctx.fillText(this.option.text, this.canvas.width / 2, this.canvas.height / 2);
   }
 }
 class v extends d {
@@ -88,17 +74,7 @@ class v extends d {
     this.canvas.width = this.width, this.canvas.height = this.height;
   }
   draw() {
-    this.ctx.drawImage(
-      this.video,
-      0,
-      0,
-      this.video.videoWidth,
-      this.video.videoHeight,
-      0,
-      0,
-      this.width,
-      this.height
-    );
+    this.ctx.drawImage(this.video, 0, 0, this.video.videoWidth, this.video.videoHeight, 0, 0, this.width, this.height);
   }
 }
 function n(t) {
@@ -111,7 +87,7 @@ function n(t) {
   throw new TypeError("invalid source options");
 }
 class m {
-  constructor(i) {
+  constructor(e) {
     h(this, "replaceText");
     h(this, "raduis");
     h(this, "source");
@@ -121,7 +97,7 @@ class m {
     h(this, "textIndex");
     h(this, "isGray");
     h(this, "raqId");
-    this.replaceText = i.replaceText, this.raduis = i.raduis, this.source = i.source, this.isGray = i.isGray, this.isDynamic = i.isDynamic, this.canvas = i.canvas, this.ctx = this.canvas.getContext("2d"), this.textIndex = 0, this.raqId = 0, this.initContext();
+    this.replaceText = e.replaceText, this.raduis = e.raduis, this.source = e.source, this.isGray = e.isGray, this.isDynamic = e.isDynamic, this.canvas = e.canvas, this.ctx = this.canvas.getContext("2d"), this.textIndex = 0, this.raqId = 0, this.initContext();
   }
   fps() {
     this.isDynamic ? this.raqId = requestAnimationFrame(() => {
@@ -134,21 +110,21 @@ class m {
   initContext() {
     this.ctx.font = "bold 12px 'Roboto Mono' 'Microsoft YaHei' '\u5FAE\u8F6F\u96C5\u9ED1' 'sans-serif'", this.ctx.textAlign = "center", this.ctx.textBaseline = "middle";
   }
-  drawText(i, s, e) {
-    let [r, a, c, o] = e;
+  drawText(e, s, i) {
+    let [r, a, c, o] = i;
     if (!o)
       return;
     this.isGray && (r = a = c = 0.2126 * r + 0.7152 * a + 0.0722 * c), this.ctx.fillStyle = `rgba(${r},${a},${c},${o})`;
     const u = this.replaceText[this.textIndex];
-    this.textIndex = (this.textIndex + 1) % this.replaceText.length, this.ctx.fillText(u, i, s);
+    this.textIndex = (this.textIndex + 1) % this.replaceText.length, this.ctx.fillText(u, e, s);
   }
   draw() {
-    const i = this.source.getBitmap();
-    this.canvas.width = i.width, this.canvas.height = i.height, this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
-    for (let s = 0; s < i.height; s += this.raduis)
-      for (let e = 0; e < i.width; e += this.raduis) {
-        const r = i.getPixelAt(e, s);
-        this.drawText(e, s, r);
+    const e = this.source.getBitmap();
+    this.canvas.width = e.width, this.canvas.height = e.height, this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
+    for (let s = 0; s < e.height; s += this.raduis)
+      for (let i = 0; i < e.width; i += this.raduis) {
+        const r = e.getPixelAt(i, s);
+        this.drawText(i, s, r);
       }
   }
 }
@@ -161,28 +137,28 @@ function y(t) {
     throw new Error('require "source" option');
 }
 function I(t) {
-  return new Promise((i, s) => {
-    const e = new Image();
-    e.onload = function() {
-      i(e);
-    }, e.onerror = function(r) {
+  return new Promise((e, s) => {
+    const i = new Image();
+    i.crossOrigin = "anonymous", i.onload = function() {
+      e(i);
+    }, i.onerror = function(r) {
       s(r);
-    }, e.src = t;
+    }, i.src = t;
   });
 }
 function T(t) {
-  return new Promise((i, s) => {
-    const e = document.createElement("video");
-    e.oncanplay = function() {
-      i(e);
-    }, e.onerror = function(r) {
+  return new Promise((e, s) => {
+    const i = document.createElement("video");
+    i.oncanplay = function() {
+      e(i);
+    }, i.onerror = function(r) {
       s(r);
-    }, e.src = t;
+    }, i.src = t;
   });
 }
 async function q(t) {
   y(t);
-  let i, s = { ...t };
+  let e, s = { ...t };
   if (t.source.text)
     s.source = n({
       fontFamily: t.source.fontFamily || "Microsoft YaHei",
@@ -190,28 +166,28 @@ async function q(t) {
       fontSize: t.source.fontSize || 200
     });
   else if (t.source.img) {
-    const e = await I(t.source.img);
-    let r = t.source.width || e.width, a = t.source.height || e.height;
-    t.source.width && !t.source.height ? a = r / e.width * e.height : t.source.height && !t.source.width && (r = a / e.height * e.width), s.source = n({
-      img: e,
+    const i = await I(t.source.img);
+    let r = t.source.width || i.width, a = t.source.height || i.height;
+    t.source.width && !t.source.height ? a = r / i.width * i.height : t.source.height && !t.source.width && (r = a / i.height * i.width), s.source = n({
+      img: i,
       width: r,
       height: a
     });
   } else if (t.source.video) {
-    const e = await T(t.source.video);
-    let r = t.source.width || e.videoWidth, a = t.source.height || e.videoHeight;
-    t.source.width && !t.source.height ? a = r / e.videoWidth * e.videoHeight : t.source.height && !t.source.width && (r = a / e.videoHeight * e.videoWidth), s.source = n({
-      video: e,
+    const i = await T(t.source.video);
+    let r = t.source.width || i.videoWidth, a = t.source.height || i.videoHeight;
+    t.source.width && !t.source.height ? a = r / i.videoWidth * i.videoHeight : t.source.height && !t.source.width && (r = a / i.videoHeight * i.videoWidth), s.source = n({
+      video: i,
       width: r,
       height: a
     }), s.isDynamic = !0;
   }
-  return i = new m(s), i.fps(), {
+  return e = new m(s), e.fps(), {
     start() {
-      i.fps();
+      e.fps();
     },
     stop() {
-      i.stop();
+      e.stop();
     }
   };
 }

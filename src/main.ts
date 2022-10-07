@@ -1,4 +1,4 @@
-import { createTextImage } from './';
+import createTextImage from './';
 
 const cvs = document.createElement('canvas');
 document.body.appendChild(cvs);

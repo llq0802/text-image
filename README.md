@@ -20,7 +20,7 @@
 
 ## 开始
 
-1.  `text-to-image-video.umd.js`：适用于基于 UMD 的方式导入
+1.  `text-to-image-video.umd.js`：适用于基于 UMD 的方式导入 会生产全局方法`createTextImage`
 
 ```html
 <!DOCTYPE html>
@@ -81,7 +81,7 @@ ReactDOM.render(<App />, document.getElementById('root'));
 ## 画文字
 
 ```js
-textImage.createTextImage({
+createTextImage({
   // 必填，配置canvas元素，最终作画在其上完成
   canvas: document.querySelector('canvas'),
   // 可选，配置作画的文本，默认为'6'
@@ -105,7 +105,7 @@ textImage.createTextImage({
 ## 画图片
 
 ```js
-textImage.createTextImage({
+createTextImage({
   // 必填，配置canvas元素，最终作画在其上完成
   canvas: document.querySelector('canvas'),
   // 可选，配置作画的文本，默认为'6'
@@ -129,7 +129,7 @@ textImage.createTextImage({
 ## 画视频
 
 ```js
-textImage.createTextImage({
+createTextImage({
   // 必填，配置canvas元素，最终作画在其上完成
   canvas: document.querySelector('canvas'),
   // 可选，配置作画的文本，默认为'6'
